@@ -1,0 +1,1 @@
+FARM-VEST Landing среднего уровня.

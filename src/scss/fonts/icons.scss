@@ -1,0 +1,75 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&::before {
+		@extend %ic;
+	}
+}
+//=======================================
+//из файла css, iconmoon.io
+
+._icon-dollar:before {
+	content: "\e900";
+}
+._icon-wired:before {
+	content: "\e901";
+}
+._icon-fidelity:before {
+	content: "\e902";
+}
+._icon-tvitter:before {
+	content: "\e903";
+}
+._icon-star-clear:before {
+	content: "\e904";
+}
+._icon-star:before {
+	content: "\e905";
+}
+._icon-sitelogo:before {
+	content: "\e906";
+}
+._icon-money-bag:before {
+	content: "\e907";
+}
+._icon-marketwatch:before {
+	content: "\e908";
+}
+._icon-instagram:before {
+	content: "\e909";
+}
+._icon-forbes:before {
+	content: "\e90a";
+}
+._icon-facebook:before {
+	content: "\e90b";
+}
+._icon-ellipse-clear:before {
+	content: "\e90c";
+}
+._icon-ellipse:before {
+	content: "\e90d";
+}
+._icon-create-account:before {
+	content: "\e90e";
+}
+._icon-carbon-mobile-download:before {
+	content: "\e90f";
+}
+._icon-carbon-currency-dollar:before {
+	content: "\e910";
+}
+._icon-business-insider:before {
+	content: "\e911";
+}
+._icon-bank:before {
+	content: "\e912";
+}

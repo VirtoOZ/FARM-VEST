@@ -1,0 +1,25 @@
+//<BUTTONS (a.btn+tab)>
+// Сниппет (HTML): btn
+
+.button {
+	@include adaptiveValue("padding-top", 13, 8);
+	@include adaptiveValue("padding-bottom", 13, 8);
+	@include adaptiveValue("padding-left", 25, 16);
+	@include adaptiveValue("padding-right", 25, 16);
+	border-radius: rem(10);
+	&_transparent {
+		border: rem(1) solid #fff;
+		@include adaptiveValue("padding-top", 12, 6);
+		@include adaptiveValue("padding-bottom", 12, 6);
+	}
+	&_green {
+		background-color: $greenColor;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+		}
+	}
+	&--fw {
+		width: 100%;
+	}
+}
