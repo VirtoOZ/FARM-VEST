@@ -1,6 +1,13 @@
 //<FORM>
 // Сниппет (HTML):
 .form {
+	@media (min-width: $mobileSmall) {
+		display: flex;
+	}
+
+	@include adaptiveValue("width", 533, 290);
+	align-items: center;
+	position: relative;
 	&__row {
 	}
 	&__column {
@@ -10,6 +17,18 @@
 	&__input {
 	}
 	&__button {
+		position: absolute;
+		@media (max-width: $mobileSmall) {
+			width: 96%;
+			bottom: 3%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		@media (min-width: $mobileSmall) {
+			top: 50%;
+			transform: translateY(-50%);
+			right: 2%;
+		}
 	}
 	&__error {
 	}
@@ -22,7 +41,7 @@
 
 // <INPUTS>
 // Сниппет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Сниппет (HTML): chk

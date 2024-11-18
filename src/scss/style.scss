@@ -28,7 +28,7 @@ $mainBgColor: #263238; //приглушить цвет для комфорта �
 // Настройки адаптивной сетки
 $minWidth: 320; // Минимальная ширина страницы
 $maxWidth: 1920; // Ширина полотна (макета)
-$maxWidthContainer: 1620; // Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1590; // Ширина ограничивающего контейнера (0 = нет ограничения)
 // Общий отступ у контейнера
 $containerPadding: 30; // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPaddingMin: 15; // минимальный отступ
@@ -164,6 +164,10 @@ body {
 	&__main {
 		@include adaptiveValue("margin-top", 182, 50);
 		@include adaptiveValue("padding-top", 70, 25);
+		@include adaptiveValue("margin-bottom", 200, 60);
+	}
+	// .page__how
+	&__how {
 	}
 }
 //</ОБЩИЕ СТИЛИ>=================================
@@ -175,10 +179,27 @@ body {
 	}
 	// .main__top
 	&__top {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include adaptiveValue("margin-bottom", 210, 70);
+	}
+
+	// .main__form
+	&__form {
 	}
 	// .main__title
 	&__title {
 		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		& .title__title {
+			max-width: rem(923);
+		}
+		.title__text {
+			max-width: rem(725);
+		}
 	}
 	// .main__bottom
 	&__bottom {
@@ -208,9 +229,121 @@ body {
 
 //</MAIN>=================================
 
-//<FEATURES>=================================
+//<HOW>=================================
+.how {
+	// .how__container
+	&__container {
+	}
+	// .how__body
+	&__body {
+		display: flex;
+		@include adaptiveValue("column-gap", 96, 25);
+		@include adaptiveValue("padding-left", 100, 0);
+		@include adaptiveValue("padding-right", 100, 0);
+	}
+	// .how__content
+	&__content {
+		flex: 0 0 47.5%;
+	}
+	// .how__columns
+	&__columns {
+	}
+	// .how__column
+	&__column {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 48, 15);
+		}
+	}
+	// .how__item
+	&__item {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("column-gap", 32, 10);
+	}
+	// .how__media
+	&__media {
+		flex: 0 0 52.5%;
+	}
+	// .how__title
+	&__title {
+	}
+}
+.how-item {
+	// .how-item__icon
+	&__icon {
+		position: relative;
+		width: rem(110);
+		height: rem(110);
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			@include adaptiveValue("font-size", 56, 26);
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 128, 0, 0.1);
+			border-radius: 50%;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	// .how-item__boby
+	&__boby {
+	}
+	// .how-item__title
+	&__title {
+		font-size: rem(20);
+		font-weight: 700;
+	}
+	// .how-item__text
+	&__text {
+	}
+}
+.how-media {
+	// .how-media__border
+	&__border {
+		position: relative;
+		@include adaptiveValue("padding-top", 166, 50);
+		@include adaptiveValue("padding-bottom", 166, 50);
+		@include adaptiveValue("padding-left", 45, 15);
+		@include adaptiveValue("padding-right", 45, 15);
+		background-color: rgba(255, 255, 255, 0.05);
+		border-radius: rem(20);
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			// @include adaptiveValue("width", 585, 200);
+			// @include adaptiveValue("height", 585, 200);
+			width: 585px;
+			height: 585px;
+			border-radius: 50%;
+			border: rem(1) solid #fff;
+		}
+		&::after {
+			top: 0;
+			right: 0;
+		}
+		&::before {
+			top: 10px;
+			right: 0;
+		}
+	}
+	// .how-media__image
+	&__image {
+		text-align: center;
+		img {
+			max-width: 100%;
+		}
+	}
+}
 
-//</FEATURES>=================================
+//</~H>=================================
 
 //<SERVICES>=================================
 
