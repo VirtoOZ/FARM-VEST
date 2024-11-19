@@ -2,20 +2,20 @@
 // Сниппет (HTML): btn
 
 .button {
-	min-height: 64px;
 	display: inline-flex;
 	align-items: center;
-	@include adaptiveValue("padding-top", 13, 8);
-	@include adaptiveValue("padding-bottom", 13, 8);
-	@include adaptiveValue("padding-left", 25, 16);
-	@include adaptiveValue("padding-right", 25, 16);
+	@include adaptiveValue("padding-top", 24, 14);
+	@include adaptiveValue("padding-bottom", 22, 12);
+	@include adaptiveValue("padding-left", 44, 18);
+	@include adaptiveValue("padding-right", 44, 18);
 	border-radius: rem(10);
 	font-weight: 500;
 	white-space: nowrap;
+	line-height: math.div(20, 18);
 	&_transparent {
 		border: rem(1) solid #fff;
-		@include adaptiveValue("padding-top", 12, 6);
-		@include adaptiveValue("padding-bottom", 12, 6);
+		@include adaptiveValue("padding-top", 20, 7);
+		@include adaptiveValue("padding-bottom", 20, 7);
 	}
 	&_green {
 		background-color: $greenColor;

@@ -1,7 +1,7 @@
 // Заголовки, общие БЄМ блоки и проче...
 .title {
+	@include adaptiveValue("padding-right", 20, 0);
 	@include adaptiveValue("margin-bottom", 48, 20);
-
 	// .title__title
 	&__title {
 		max-width: rem(580);

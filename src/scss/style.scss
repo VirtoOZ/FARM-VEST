@@ -172,6 +172,11 @@ body {
 	}
 	// .page__pathway
 	&__pathway {
+		@include adaptiveValue("margin-bottom", 200, 80);
+	}
+	// .page__achievements
+	&__achievements {
+		@include adaptiveValue("margin-bottom", 200, 80);
 	}
 }
 //</ОБЩИЕ СТИЛИ>=================================
@@ -217,7 +222,7 @@ body {
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
-		@include adaptiveValue("column-gap", 108, 30);
+		@include adaptiveValue("column-gap", 108, 0);
 		justify-items: center;
 		align-content: center;
 	}
@@ -226,7 +231,7 @@ body {
 	}
 	// .brands__link
 	&__link {
-		font-size: 55px;
+		font-size: 110px;
 	}
 }
 // ===<animation>===
@@ -240,12 +245,14 @@ body {
 	}
 	// .how__body
 	&__body {
+		@media (min-width: $mobileBig) {
+			@include adaptiveValue("padding-left", 100, 0);
+			@include adaptiveValue("padding-right", 100, 0);
+		}
 		@media (min-width: $tablet) {
 			display: flex;
 		}
 		@include adaptiveValue("column-gap", 96, 25);
-		@include adaptiveValue("padding-left", 100, 0);
-		@include adaptiveValue("padding-right", 100, 0);
 	}
 	// .how__content
 	&__content {
@@ -274,6 +281,9 @@ body {
 	// .how__media
 	&__media {
 		flex: 0 0 53%;
+		@media (max-width: $mobileSmall) {
+			margin: 0 rem(-15);
+		}
 	}
 	// .how__title
 	&__title {
@@ -319,10 +329,10 @@ body {
 	// .how-media__border
 	&__border {
 		position: relative;
-		@include adaptiveValue("padding-top", 166, 50);
-		@include adaptiveValue("padding-bottom", 166, 50);
-		@include adaptiveValue("padding-left", 45, 15);
-		@include adaptiveValue("padding-right", 45, 15);
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		background-color: rgba(255, 255, 255, 0.05);
 		border-radius: rem(20);
 		overflow: hidden;
@@ -349,6 +359,12 @@ body {
 		position: relative;
 		z-index: 2;
 		text-align: center;
+		@media (max-width: $tablet) {
+			@include adaptiveValue("margin-top", 90, 45);
+			@include adaptiveValue("margin-bottom", 90, 45);
+		}
+		@include adaptiveValue("margin-left", 45, 15);
+		@include adaptiveValue("margin-right", 45, 15);
 		img {
 			max-width: 100%;
 		}
@@ -367,13 +383,17 @@ body {
 			display: flex;
 			flex-direction: row-reverse;
 		}
+		@media (min-width: $mobileBig) {
+			@include adaptiveValue("padding-left", 100, 0);
+			@include adaptiveValue("padding-right", 100, 0);
+		}
 		@include adaptiveValue("column-gap", 96, 25);
-		@include adaptiveValue("padding-left", 100, 0);
-		@include adaptiveValue("padding-right", 100, 0);
 	}
 	// .pathway__content
 	&__content {
 		flex: 1 1 47%;
+		// @include adaptiveValue("padding-left", 100, 0);
+		// @include adaptiveValue("padding-right", 100, 0);
 		@media (max-width: $tablet) {
 			@include adaptiveValue("margin-bottom", 100, 50);
 		}
@@ -390,6 +410,9 @@ body {
 	// .pathway__media
 	&__media {
 		flex: 0 0 53%;
+		@media (max-width: $mobileSmall) {
+			margin: 0 rem(-15);
+		}
 	}
 }
 .spollers {
@@ -407,10 +430,10 @@ body {
 	// .pathway-media__border
 	&__border {
 		position: relative;
-		@include adaptiveValue("padding-top", 166, 50);
-		@include adaptiveValue("padding-bottom", 166, 50);
-		@include adaptiveValue("padding-left", 45, 15);
-		@include adaptiveValue("padding-right", 45, 15);
+		min-height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		background-color: rgba(255, 255, 255, 0.05);
 		border-radius: rem(20);
 		overflow: hidden;
@@ -424,12 +447,15 @@ body {
 			border: rem(1) solid #fff;
 		}
 		&::after {
-			top: -5%;
-			right: -40%;
+			bottom: -5%;
+			left: -40%;
 		}
 		&::before {
-			top: -13%;
-			right: -37%;
+			bottom: -13%;
+			left: -37%;
+		}
+		@media (max-width: $mobileBig) {
+			// margin: 0 rem(-15);
 		}
 	}
 	// .pathway-media__image
@@ -437,6 +463,12 @@ body {
 		position: relative;
 		z-index: 2;
 		text-align: center;
+		@media (max-width: $tablet) {
+			@include adaptiveValue("margin-top", 90, 45);
+			@include adaptiveValue("margin-bottom", 90, 45);
+		}
+		@include adaptiveValue("margin-left", 45, 15);
+		@include adaptiveValue("margin-right", 45, 15);
 		img {
 			max-width: 100%;
 		}
@@ -447,6 +479,106 @@ body {
 //</PATHWAY>=================================
 
 //<REVIEWS>=================================
+.achievements {
+	// .achievements__container
+	&__container {
+	}
+	// .achievements__body
+	&__body {
+		@media (min-width: $mobileBig) {
+			@include adaptiveValue("padding-left", 100, 0);
+			@include adaptiveValue("padding-right", 100, 0);
+		}
+		@media (min-width: $tablet) {
+			display: flex;
+		}
+		@include adaptiveValue("column-gap", 177, 25);
+	}
+	// .achievements__content
+	&__content {
+		flex: 1 1 47%;
+		@media (max-width: $tablet) {
+			@include adaptiveValue("margin-bottom", 100, 50);
+		}
+	}
+	// .achievements__title
+	&__title {
+	}
+	// .achievements__columns
+	&__columns {
+		@include adaptiveValue("margin-bottom", 48, 20);
+	}
+	// .achievements__column
+	&__column {
+		max-width: rem(500);
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 48, 15);
+		}
+	}
+	// .achievements__item
+	&__item {
+	}
+	// .achievements__buttons
+	&__buttons {
+	}
+	// .achievements__button
+	&__button {
+		@include adaptiveValue("padding-left", 55, 35);
+		@include adaptiveValue("padding-right", 55, 35);
+	}
+	// .achievements__media
+	&__media {
+		flex: 0 0 53%;
+		@media (max-width: $mobileSmall) {
+			margin: 0 rem(-15);
+		}
+	}
+}
+.achievements-item {
+	display: flex;
+	align-items: center;
+	@include adaptiveValue("column-gap", 50, 20);
+	// .achievements-item__icon
+	&__icon {
+		display: flex;
+		position: relative;
+		&::before {
+			content: "1";
+			position: absolute;
+			top: 65%;
+			left: 50%;
+			transform: translate(-50%, -65%);
+			@include adaptiveValue("font-size", 36, 18);
+			color: #fff;
+			line-height: math.div(40, 36);
+			font-weight: 700;
+		}
+		&::after {
+			content: "";
+			background-color: rgba(255, 255, 255, 0.05);
+			border-radius: 50%;
+			@include adaptiveValue("width", 64, 32);
+			@include adaptiveValue("height", 64, 32);
+		}
+	}
+	// .achievements-item__boby
+	&__boby {
+	}
+	// .achievements-item__title
+	&__title {
+		color: #fff;
+		@include adaptiveValue("font-size", 20, 18);
+		font-weight: 500;
+	}
+}
+.achievements-media {
+	// .achievements-media__image
+	&__image {
+		@media (max-width: $tablet) {
+			padding-bottom: 75%;
+		}
+	}
+}
 
 //===<animation>===
 
