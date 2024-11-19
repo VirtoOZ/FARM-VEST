@@ -178,6 +178,10 @@ body {
 	&__achievements {
 		@include adaptiveValue("margin-bottom", 200, 80);
 	}
+	// .page__reviews
+	&__reviews {
+		@include adaptiveValue("margin-bottom", 200, 80);
+	}
 }
 //</ОБЩИЕ СТИЛИ>=================================
 
@@ -193,7 +197,6 @@ body {
 		align-items: center;
 		@include adaptiveValue("margin-bottom", 210, 70);
 	}
-
 	// .main__form
 	&__form {
 	}
@@ -478,7 +481,7 @@ body {
 
 //</PATHWAY>=================================
 
-//<REVIEWS>=================================
+//<ACHIVEMENTS>=================================
 .achievements {
 	// .achievements__container
 	&__container {
@@ -579,13 +582,110 @@ body {
 		}
 	}
 }
-
 //===<animation>===
 
-//</REVIEWS>=================================
+//</ACHIVEMENTS>=================================
 
 //<LOCATION>=================================
-
+.reviews {
+	// .reviews__container
+	&__container {
+	}
+	// .reviews__top
+	&__top {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include adaptiveValue("margin-bottom", 48, 20);
+	}
+	// .reviews__title
+	&__title {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		& .title__title {
+			max-width: rem(1090);
+		}
+		.title__text {
+			max-width: rem(570);
+		}
+	}
+	// .reviews__bottom
+	&__bottom {
+	}
+}
+.reviews-bottom {
+	// .reviews-bottom__body
+	&__body {
+		@media (min-width: $mobileBig) {
+			@include adaptiveValue("padding-left", 100, 0);
+			@include adaptiveValue("padding-right", 100, 0);
+		}
+		@media (max-width: $mobileSmall) {
+			margin: rem(0) rem(-15);
+		}
+	}
+	// .reviews-bottom__columns
+	&__columns {
+		@media (min-width: $tablet) {
+			display: flex;
+			@include adaptiveValue("column-gap", 48, 20);
+		}
+	}
+	// .reviews-bottom__column
+	&__column {
+		@include adaptiveValue("margin-bottom", 48, 15);
+		&:not(:last-child) {
+		}
+	}
+	// .reviews-bottom__item
+	&__item {
+		display: flex;
+	}
+	// .reviews-bottom__buttons
+	&__buttons {
+		display: flex;
+		justify-content: center;
+	}
+	// .reviews-bottom__button
+	&__button {
+		@include adaptiveValue("padding-left", 70, 18);
+		@include adaptiveValue("padding-right", 70, 18);
+	}
+}
+.item-reviews {
+	@media (max-width: $mobileSmall) {
+		.item-reviews__image {
+			border-radius: rem(20) 0 0 rem(20);
+			overflow: hidden;
+		}
+	}
+	// .item-reviews__image
+	&__image {
+		flex: 0 0 44%;
+		padding-bottom: 55%;
+	}
+	// .item-reviews__body
+	flex: 0 0 66%;
+	&__body {
+		@include adaptiveValue("padding-top", 32, 10);
+		@include adaptiveValue("padding-bottom", 32, 10);
+		@include adaptiveValue("padding-left", 32, 20);
+		@include adaptiveValue("padding-right", 32, 10);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border-radius: 0 rem(20) rem(20) 0;
+		background: rgba(255, 255, 255, 0.05);
+	}
+	// .item-reviews__text
+	&__text {
+	}
+	// .item-reviews__name
+	&__name {
+	}
+}
 //</LOCATION>=================================
 // </ОБЩИЙ СТИЛЬ>=================================
 
