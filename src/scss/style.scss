@@ -182,6 +182,10 @@ body {
 	&__reviews {
 		@include adaptiveValue("margin-bottom", 200, 80);
 	}
+	// .page__app
+	&__app {
+		@include adaptiveValue("margin-bottom", 200, 80);
+	}
 }
 //</ОБЩИЕ СТИЛИ>=================================
 
@@ -690,7 +694,75 @@ body {
 // </ОБЩИЙ СТИЛЬ>=================================
 
 //<screen-01>=================================
-
+.app {
+	// .app__container
+	&__container {
+	}
+	// .app__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: rem(20);
+		background: rgba(255, 255, 255, 0.07);
+		@include adaptiveValue("padding-top", 72, 35);
+		@include adaptiveValue("padding-bottom", 66, 30);
+		overflow: hidden;
+		@media (min-width: $mobileBig) {
+			@include adaptiveValue("margin-left", 100, 0);
+			@include adaptiveValue("margin-right", 100, 0);
+		}
+	}
+	// .app__title
+	&__title {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		& .title__title {
+			max-width: rem(770);
+			margin-bottom: 0;
+		}
+		&::before,
+		&::after {
+			content: "";
+			z-index: 1;
+			position: absolute;
+			@include adaptiveValue("width", 585, 270);
+			@include adaptiveValue("height", 585, 270);
+			border-radius: 50%;
+			border: rem(1) solid rgba(255, 255, 255, 0.37);
+		}
+		&::before {
+			top: -100%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&::after {
+			top: -60%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	// .app__buttons
+	&__buttons {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include adaptiveValue("column-gap", 26, 16);
+	}
+	// .app__button
+	&__button {
+		position: relative;
+		z-index: 2;
+		flex: 0 1 rem(160);
+		img {
+			max-width: 100%;
+		}
+	}
+}
 //</screen-01>=================================
 
 //<screen-02>=================================
