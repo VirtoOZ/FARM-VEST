@@ -4,31 +4,46 @@
 .button {
 	display: inline-flex;
 	justify-content: center;
-	min-width: rem(142);
-	align-items: center;
-	@include adaptiveValue("padding-top", 24, 14);
-	@include adaptiveValue("padding-bottom", 22, 12);
-	padding-left: rem(5);
-	padding-right: rem(5);
-	// @include adaptiveValue("padding-left", 44, 18);
-	// @include adaptiveValue("padding-right", 44, 18);
+	// min-width: rem(142);
+	// align-items: center;
+	@include adaptiveValue("padding-top", 20.2, 13);
+	@include adaptiveValue("padding-bottom", 20.2, 11);
+	// padding-left: rem(5);
+	// padding-right: rem(5);
+	@include adaptiveValue("padding-left", 44, 18);
+	@include adaptiveValue("padding-right", 44, 18);
 	border-radius: rem(10);
 	font-weight: 500;
 	white-space: nowrap;
-	line-height: math.div(20, 18);
+	line-height: math.div(22, 18);
+	background-color: $greenColor;
+	border: rem(1) solid $greenColor;
+	transition:
+		background-color 0.3s ease 0s,
+		color 0.3s ease 0s,
+		border 0.3s ease 0s;
 	&_transparent {
+		background-color: transparent;
 		border: rem(1) solid #fff;
-		@include adaptiveValue("padding-top", 23.2, 13.2);
-		@include adaptiveValue("padding-bottom", 21.2, 11.2);
-	}
-	&_green {
-		background-color: $greenColor;
+		@include adaptiveValue("padding-top", 20.2, 13);
+		@include adaptiveValue("padding-bottom", 20.2, 11);
 	}
 	@media (any-hover: hover) {
 		&:hover {
+			background-color: transparent;
 		}
 	}
 	&--fw {
 		width: 100%;
+	}
+}
+.button,
+.button_transparent {
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: transparent;
+			border: rem(1) solid #1a851a;
+			color: #1a851a;
+		}
 	}
 }

@@ -16,6 +16,12 @@
 //=======================================
 //из файла css, iconmoon.io
 
+._icon-start:before {
+	content: "\e912";
+}
+._icon-sign:before {
+	content: "\e913";
+}
 ._icon-facebook:before {
 	content: "\e900";
 }
