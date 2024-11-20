@@ -12,7 +12,7 @@
 	&__top {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		@include adaptiveValue("column-gap", 186, 0);
+		@include adaptiveValue("column-gap", 186, 50, 2, 1670, 992);
 		@include adaptiveValue("margin-bottom", 100, 25);
 		@media (max-width: $tablet) {
 			grid-template-columns: 1fr;
@@ -29,7 +29,7 @@
 .footer-top {
 	// .footer-top__columns
 	&__columns {
-		max-width: rem(438);
+		// max-width: rem(438);
 	}
 	// .footer-top__item
 	&__item {
@@ -42,6 +42,9 @@
 	}
 }
 .item-logo {
+	@media (max-width: $tablet) {
+		max-width: rem(438);
+	}
 	// .item-logo__logo
 	&__logo {
 		display: grid;
@@ -73,7 +76,7 @@
 	// .item-form__text
 	&__text {
 		max-width: rem(438);
-		text-align-last: left;
+		// text-align-last: left;
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 24, 10);
 		}
@@ -94,13 +97,14 @@
 	}
 }
 .item-social {
-	display: flex;
 	@include adaptiveValue("column-gap", 48, 10);
 	@media (max-width: $mobileSmall) {
 		flex-direction: column;
+		display: flex;
 	}
 	@media (min-width: $pc) {
 		row-gap: rem(10);
+		display: flex;
 	}
 	@media (max-width: $tablet) {
 		display: flex;
@@ -178,14 +182,13 @@
 			width: 100%;
 		}
 		display: flex;
-		align-items: center;
-
+		justify-content: space-between;
 		@media (min-width: $tablet) {
+			// display: flex;
 			align-items: center;
-			justify-content: space-between;
 		}
 		@media (min-width: $mobileBig) {
-			justify-content: space-between;
+			align-items: center;
 		}
 		@media (max-width: $mobileBig) {
 			flex-direction: column;
@@ -195,9 +198,13 @@
 	// .footer-bottom__copy
 	&__copy {
 		font-size: rem(14);
+		@media (max-width: $mobileBig) {
+			align-self: center;
+		}
 	}
 	// .footer-bottom__info
 	&__info {
+		// width: 100%;
 	}
 	// .footer-bottom__list
 	&__list {
@@ -214,10 +221,17 @@
 		}
 		@media (max-width: $mobileSmall) {
 			grid-template-columns: repeat(2, 1fr);
+			// justify-items: space-between;
+			// justify-content: space-between;
 		}
 	}
 	// .footer-bottom__item
 	&__item {
+		@media (max-width: $mobileSmall) {
+			&:nth-child(even) {
+				justify-self: flex-end;
+			}
+		}
 		@media (max-width: $tablet) {
 			justify-self: start;
 		}

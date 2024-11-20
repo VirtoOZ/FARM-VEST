@@ -28,7 +28,7 @@ $mainBgColor: #263238; //приглушить цвет для комфорта �
 // Настройки адаптивной сетки
 $minWidth: 320; // Минимальная ширина страницы
 $maxWidth: 1920; // Ширина полотна (макета)
-$maxWidthContainer: 1590; // Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1390; // Ширина ограничивающего контейнера (0 = нет ограничения)
 // Общий отступ у контейнера
 $containerPadding: 30; // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPaddingMin: 15; // минимальный отступ
@@ -36,7 +36,7 @@ $containerPaddingMin: 15; // минимальный отступ
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
-$pc: em($maxWidthContainer); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobileBig: em(767.98); // Телефоны L
 $mobile: em(639.98); // Телефоны L
@@ -101,6 +101,7 @@ body {
 Например header__container, main__container и т.д.
 Снипет (HTML): cnt
 */
+
 @if ($responsiveType==1) {
 	// Отзывчивая
 	[class*="__container"] {
@@ -143,6 +144,9 @@ body {
 			}
 		}
 	}
+}
+[class*="__container-lage"] {
+	max-width: rem(1620);
 }
 // </CONTAINER>=================================
 
@@ -228,7 +232,7 @@ body {
 	// .brands__list
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(210px, auto));
+		grid-template-columns: repeat(auto-fit, minmax(190px, auto));
 		// grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 		@include adaptiveValue("column-gap", 108, 0);
 		@include adaptiveValue("row-gap", 30, 10);
@@ -250,7 +254,7 @@ body {
 	// .brands__link
 	&__link {
 		transition: color 0.3s ease 0s;
-		@include adaptiveValue("font-size", 30, 22);
+		@include adaptiveValue("font-size", 28, 22);
 		color: rgba(255, 255, 255, 0.5);
 		line-height: 177%;
 	}
@@ -265,10 +269,6 @@ body {
 	}
 	// .how__body
 	&__body {
-		@media (min-width: $mobileBig) {
-			@include adaptiveValue("padding-left", 100, 0);
-			@include adaptiveValue("padding-right", 100, 0);
-		}
 		@media (min-width: $tablet) {
 			display: flex;
 		}
@@ -276,7 +276,7 @@ body {
 	}
 	// .how__content
 	&__content {
-		flex: 1 1 47%;
+		flex: 1 1 rem(574);
 		@media (max-width: $tablet) {
 			@include adaptiveValue("margin-bottom", 100, 50);
 		}
@@ -300,7 +300,7 @@ body {
 	}
 	// .how__media
 	&__media {
-		flex: 0 0 53%;
+		flex: 1 1 rem(750);
 		@media (max-width: $mobileSmall) {
 			margin: 0 rem(-15);
 		}
@@ -408,17 +408,11 @@ body {
 			display: flex;
 			flex-direction: row-reverse;
 		}
-		@media (min-width: $mobileBig) {
-			@include adaptiveValue("padding-left", 100, 0);
-			@include adaptiveValue("padding-right", 100, 0);
-		}
 		@include adaptiveValue("column-gap", 126, 25);
 	}
 	// .pathway__content
 	&__content {
 		flex: 1 1 rem(600);
-		// @include adaptiveValue("padding-left", 100, 0);
-		// @include adaptiveValue("padding-right", 100, 0);
 		@media (max-width: $tablet) {
 			@include adaptiveValue("margin-bottom", 100, 50);
 		}
@@ -513,10 +507,6 @@ body {
 	}
 	// .achievements__body
 	&__body {
-		@media (min-width: $mobileBig) {
-			@include adaptiveValue("padding-left", 100, 0);
-			@include adaptiveValue("padding-right", 100, 0);
-		}
 		@media (min-width: $tablet) {
 			display: flex;
 		}
@@ -524,7 +514,7 @@ body {
 	}
 	// .achievements__content
 	&__content {
-		flex: 1 1 47%;
+		flex: 1 1 rem(563);
 		@media (max-width: $tablet) {
 			@include adaptiveValue("margin-bottom", 100, 50);
 		}
@@ -555,7 +545,7 @@ body {
 	}
 	// .achievements__media
 	&__media {
-		flex: 0 0 53%;
+		flex: 1 1 rem(680);
 		@media (max-width: $mobileSmall) {
 			margin: 0 rem(-15);
 		}
@@ -641,10 +631,6 @@ body {
 .reviews-bottom {
 	// .reviews-bottom__body
 	&__body {
-		@media (min-width: $mobileBig) {
-			@include adaptiveValue("padding-left", 100, 0);
-			@include adaptiveValue("padding-right", 100, 0);
-		}
 		@media (max-width: $mobileSmall) {
 			margin: rem(0) rem(-15);
 		}
@@ -716,24 +702,29 @@ body {
 	// .app__container
 	&__container {
 	}
+	// .app__wrapper
+	&__wrapper {
+		// @media (max-width: $mobileSmall) {
+		// 	margin: rem(0) rem(-15);
+		// }
+	}
 	// .app__body
 	&__body {
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		max-width: rem(1406);
 		border-radius: rem(20);
 		background: rgba(255, 255, 255, 0.07);
 		@include adaptiveValue("padding-top", 72, 35);
 		@include adaptiveValue("padding-bottom", 66, 30);
-		@include adaptiveValue("padding-left", 100, 15);
-		@include adaptiveValue("padding-right", 100, 15);
+		@include adaptiveValue("padding-left", 30, 15);
+		@include adaptiveValue("padding-right", 30, 15);
 		overflow: hidden;
 		@media (min-width: $mobileBig) {
 		}
 		@media (max-width: $mobileSmall) {
-			// margin: rem(0) rem(-15);
+			margin: rem(0) rem(-15);
 		}
 	}
 	// .app__title
