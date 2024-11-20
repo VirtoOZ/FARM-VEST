@@ -104,13 +104,9 @@
 	}
 	// .menu__button
 	&__button {
-		@media (max-width: $mobileBig) {
+		@media (max-width: $tablet) {
 			font-size: 0;
-			&:last-child {
-				border: rem(1) solid #fff;
-				@include adaptiveValue("padding-top", 12, 6);
-				@include adaptiveValue("padding-bottom", 12, 6);
-			}
+			min-width: rem(30);
 		}
 	}
 	// .menu__logo

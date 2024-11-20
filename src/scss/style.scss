@@ -36,7 +36,7 @@ $containerPaddingMin: 15; // минимальный отступ
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
-$pc: $maxWidthContainer; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$pc: em($maxWidthContainer); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobileBig: em(767.98); // Телефоны L
 $mobile: em(639.98); // Телефоны L
@@ -158,7 +158,7 @@ body {
 // @import "home";
 // </IMPORT>=================================
 
-// <ОБЩИЙ СТИЛЬ>=================================
+//<ОБЩИЙ СТИЛЬ>=================================
 .page {
 	// .page__main
 	&__main {
@@ -228,21 +228,34 @@ body {
 	// .brands__list
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(210px, auto));
+		// grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 		@include adaptiveValue("column-gap", 108, 0);
+		@include adaptiveValue("row-gap", 30, 10);
 		justify-items: center;
+		justify-content: center;
+		// align-items: center;
 		align-content: center;
 	}
 	// .brands__item
 	&__item {
+		@media (any-hover: hover) {
+			&:hover {
+				.brands__link {
+					color: #fff;
+				}
+			}
+		}
 	}
 	// .brands__link
 	&__link {
-		font-size: 110px;
+		transition: color 0.3s ease 0s;
+		@include adaptiveValue("font-size", 30, 22);
+		color: rgba(255, 255, 255, 0.5);
+		line-height: 177%;
 	}
 }
 // ===<animation>===
-
 //</MAIN>=================================
 
 //<HOW>=================================
@@ -343,6 +356,10 @@ body {
 		background-color: rgba(255, 255, 255, 0.05);
 		border-radius: rem(20);
 		overflow: hidden;
+		@include adaptiveValue("padding-top", 100, 45);
+		@include adaptiveValue("padding-bottom", 100, 45);
+		@include adaptiveValue("padding-left", 40, 15);
+		@include adaptiveValue("padding-right", 40, 15);
 		&::after,
 		&::before {
 			content: "";
@@ -367,16 +384,17 @@ body {
 		z-index: 2;
 		text-align: center;
 		@media (max-width: $tablet) {
-			@include adaptiveValue("margin-top", 90, 45);
-			@include adaptiveValue("margin-bottom", 90, 45);
+			// @include adaptiveValue("margin-top", 90, 45);
+			// @include adaptiveValue("margin-bottom", 90, 45);
 		}
-		@include adaptiveValue("margin-left", 45, 15);
-		@include adaptiveValue("margin-right", 45, 15);
+		// @include adaptiveValue("margin-left", 45, 15);
+		// @include adaptiveValue("margin-right", 45, 15);
 		img {
 			max-width: 100%;
 		}
 	}
 }
+//===<animation>===
 //</HOW>=================================
 
 //<PATHWAY>=================================
@@ -394,11 +412,11 @@ body {
 			@include adaptiveValue("padding-left", 100, 0);
 			@include adaptiveValue("padding-right", 100, 0);
 		}
-		@include adaptiveValue("column-gap", 96, 25);
+		@include adaptiveValue("column-gap", 126, 25);
 	}
 	// .pathway__content
 	&__content {
-		flex: 1 1 47%;
+		flex: 1 1 rem(600);
 		// @include adaptiveValue("padding-left", 100, 0);
 		// @include adaptiveValue("padding-right", 100, 0);
 		@media (max-width: $tablet) {
@@ -416,7 +434,7 @@ body {
 	}
 	// .pathway__media
 	&__media {
-		flex: 0 0 53%;
+		flex: 1 1 rem(694);
 		@media (max-width: $mobileSmall) {
 			margin: 0 rem(-15);
 		}
@@ -443,6 +461,10 @@ body {
 		justify-content: center;
 		background-color: rgba(255, 255, 255, 0.05);
 		border-radius: rem(20);
+		@include adaptiveValue("padding-top", 100, 45);
+		@include adaptiveValue("padding-bottom", 100, 45);
+		@include adaptiveValue("padding-left", 40, 15);
+		@include adaptiveValue("padding-right", 40, 15);
 		overflow: hidden;
 		&::after,
 		&::before {
@@ -471,18 +493,17 @@ body {
 		z-index: 2;
 		text-align: center;
 		@media (max-width: $tablet) {
-			@include adaptiveValue("margin-top", 90, 45);
-			@include adaptiveValue("margin-bottom", 90, 45);
+			// @include adaptiveValue("margin-top", 90, 45);
+			// @include adaptiveValue("margin-bottom", 90, 45);
 		}
-		@include adaptiveValue("margin-left", 45, 15);
-		@include adaptiveValue("margin-right", 45, 15);
+		// @include adaptiveValue("margin-left", 40, 15);
+		// @include adaptiveValue("margin-right", 40, 15);
 		img {
 			max-width: 100%;
 		}
 	}
 }
 //===<animation>===
-
 //</PATHWAY>=================================
 
 //<ACHIVEMENTS>=================================
@@ -530,8 +551,7 @@ body {
 	}
 	// .achievements__button
 	&__button {
-		@include adaptiveValue("padding-left", 55, 35);
-		@include adaptiveValue("padding-right", 55, 35);
+		min-width: rem(222);
 	}
 	// .achievements__media
 	&__media {
@@ -587,10 +607,9 @@ body {
 	}
 }
 //===<animation>===
-
 //</ACHIVEMENTS>=================================
 
-//<LOCATION>=================================
+//<REVIEWS>=================================
 .reviews {
 	// .reviews__container
 	&__container {
@@ -654,8 +673,7 @@ body {
 	}
 	// .reviews-bottom__button
 	&__button {
-		@include adaptiveValue("padding-left", 70, 18);
-		@include adaptiveValue("padding-right", 70, 18);
+		min-width: rem(222);
 	}
 }
 .item-reviews {
@@ -690,27 +708,32 @@ body {
 	&__name {
 	}
 }
-//</LOCATION>=================================
-// </ОБЩИЙ СТИЛЬ>=================================
+//===<animation>===
+//</REVIEWS>=================================
 
-//<screen-01>=================================
+//<APP>=================================
 .app {
 	// .app__container
 	&__container {
 	}
 	// .app__body
 	&__body {
+		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		max-width: rem(1406);
 		border-radius: rem(20);
 		background: rgba(255, 255, 255, 0.07);
 		@include adaptiveValue("padding-top", 72, 35);
 		@include adaptiveValue("padding-bottom", 66, 30);
+		@include adaptiveValue("padding-left", 100, 15);
+		@include adaptiveValue("padding-right", 100, 15);
 		overflow: hidden;
 		@media (min-width: $mobileBig) {
-			@include adaptiveValue("margin-left", 100, 0);
-			@include adaptiveValue("margin-right", 100, 0);
+		}
+		@media (max-width: $mobileSmall) {
+			// margin: rem(0) rem(-15);
 		}
 	}
 	// .app__title
@@ -757,18 +780,11 @@ body {
 	&__button {
 		position: relative;
 		z-index: 2;
-		flex: 0 1 rem(160);
+		flex: 0 1 rem(168);
 		img {
 			max-width: 100%;
 		}
 	}
 }
-//</screen-01>=================================
-
-//<screen-02>=================================
-
-//</screen-02>=================================
-
-//</screen-03>=================================
-
-//</screen-03>=================================
+//===<animation>===
+//</APP>=================================
