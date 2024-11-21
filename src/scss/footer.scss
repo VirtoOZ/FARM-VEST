@@ -86,6 +86,7 @@
 	// .item-form__form
 	&__form {
 		@media (max-width: $tablet) {
+			display: block;
 			width: 100%;
 		}
 	}

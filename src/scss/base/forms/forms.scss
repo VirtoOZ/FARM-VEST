@@ -4,8 +4,12 @@
 	@media (min-width: $mobileSmall) {
 		display: flex;
 	}
-
+	// @media (max-width: $tablet) {
+	// 	width: 100%;
+	// }
 	@include adaptiveValue("width", 533, 290);
+	@media (min-width: $tablet) {
+	}
 	align-items: center;
 	position: relative;
 	&__row {
