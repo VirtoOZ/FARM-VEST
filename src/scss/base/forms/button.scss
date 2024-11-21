@@ -4,12 +4,9 @@
 .button {
 	display: inline-flex;
 	justify-content: center;
-	// min-width: rem(142);
-	// align-items: center;
+	min-width: rem(142);
 	@include adaptiveValue("padding-top", 20.2, 13);
 	@include adaptiveValue("padding-bottom", 20.2, 11);
-	// padding-left: rem(5);
-	// padding-right: rem(5);
 	@include adaptiveValue("padding-left", 44, 18);
 	@include adaptiveValue("padding-right", 44, 18);
 	border-radius: rem(10);

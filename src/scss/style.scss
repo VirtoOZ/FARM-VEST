@@ -28,7 +28,8 @@ $mainBgColor: #263238; //приглушить цвет для комфорта �
 // Настройки адаптивной сетки
 $minWidth: 320; // Минимальная ширина страницы
 $maxWidth: 1920; // Ширина полотна (макета)
-$maxWidthContainer: 1390; // Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1620; // Ширина ограничивающего контейнера (0 = нет ограничения)
+// $maxWidthContainer: 1390;  // Ширина ограничивающего контейнера (0 = нет ограничения)
 // Общий отступ у контейнера
 $containerPadding: 30; // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPaddingMin: 15; // минимальный отступ
@@ -61,7 +62,6 @@ body {
 	// @include adaptiveValue("font-size", 18, 16);
 	font-weight: 400;
 	line-height: 180%;
-
 	// Скролл заблокирован
 	.lock & {
 		overflow: hidden;
@@ -147,6 +147,7 @@ body {
 }
 [class*="__container-lage"] {
 	max-width: rem(1620);
+	margin: 0 auto;
 }
 // </CONTAINER>=================================
 
@@ -195,6 +196,10 @@ body {
 
 //<MAIN>=================================
 .main {
+	// .main__container-lage
+	&__container-lage {
+		position: relative;
+	}
 	// .main__container
 	&__container {
 	}
@@ -227,6 +232,9 @@ body {
 	// .main__brands
 	&__brands {
 	}
+	// .main__decor
+	&__decor {
+	}
 }
 .brands {
 	// .brands__list
@@ -257,6 +265,47 @@ body {
 		@include adaptiveValue("font-size", 28, 22);
 		color: rgba(255, 255, 255, 0.5);
 		line-height: 177%;
+	}
+}
+.decor {
+	// .decor__element
+	&__element {
+		position: absolute;
+		// ._icon-dollar
+		&_icon-dollar {
+			&::before {
+			}
+		}
+		// ._icon-star
+		&_icon-star {
+			&::before {
+			}
+		}
+		// ._icon-ellipse-clear
+		&_icon-ellipse-clear {
+			&::before {
+			}
+		}
+		// ._icon-bank
+		&_icon-bank {
+			&::before {
+			}
+		}
+		// ._icon-bucks
+		&_icon-bucks {
+			&::before {
+			}
+		}
+		// ._icon-ellipse
+		&_icon-ellipse {
+			&::before {
+			}
+		}
+		// ._icon-star-clear
+		&_icon-star-clear {
+			&::before {
+			}
+		}
 	}
 }
 // ===<animation>===

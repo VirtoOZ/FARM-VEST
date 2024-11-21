@@ -6,7 +6,6 @@
 	// .menu__body
 	&__body {
 		display: flex;
-		// @include adaptiveValue("column-gap", 30, 10);
 		@media (min-width: $mobileBig) {
 			flex: 1 1 auto;
 			justify-content: center;
@@ -14,8 +13,6 @@
 		@media (max-width: $mobileBig) {
 			flex-direction: column;
 			@include adaptiveValue("row-gap", 30, 5);
-		}
-		@media (max-width: $mobileBig) {
 			position: fixed;
 			z-index: 2;
 			width: 100%;
@@ -23,9 +20,7 @@
 			left: -100%;
 			top: 0;
 			overflow: auto;
-			// @include adaptiveValue("margin-top", 182, 50);
-			// margin: 0 0 rem(20) 0;
-			@include adaptiveValue("padding-top", 182, 50);
+			@include adaptiveValue("padding-top", 150, 60, 1, 768, 320);
 			padding: rem(30) rem(15);
 			transition: left 0.3s;
 			background-color: $greenColor;
@@ -131,10 +126,22 @@
 		position: relative;
 		z-index: 3;
 		transition: color 0.3s ease 0s;
-		@media (any-hover: hover) {
-			&:hover {
-				color: $greenColor;
-			}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			@include adaptiveValue("width", 585, 340);
+			@include adaptiveValue("height", 585, 340);
+			border-radius: 50%;
+			border: rem(1) solid #fff;
+			top: 0;
+			left: 0;
+		}
+		&::before {
+			transform: translate(calc(-50% - rem(28)), calc(-50% + rem(43)));
+		}
+		&::after {
+			transform: translate(calc(-50% + rem(27)), calc(-50% - rem(39)));
 		}
 	}
 }

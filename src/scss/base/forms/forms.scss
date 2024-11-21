@@ -1,17 +1,16 @@
 //<FORM>
 // Сниппет (HTML):
 .form {
-	@media (min-width: $mobileSmall) {
-		display: flex;
-	}
-	// @media (max-width: $tablet) {
-	// 	width: 100%;
-	// }
-	@include adaptiveValue("width", 533, 290);
-	@media (min-width: $tablet) {
-	}
-	align-items: center;
 	position: relative;
+	display: flex;
+	max-width: rem(533);
+	padding: rem(6);
+	border-radius: rem(10);
+	background-color: #fff;
+	gap: rem(5);
+	@media (max-width: $mobileSmall) {
+		flex-direction: column;
+	}
 	&__row {
 	}
 	&__column {
@@ -19,22 +18,46 @@
 	&__line {
 	}
 	&__input {
+		flex: 1 1 auto;
+		padding: rem(0) rem(20);
+		color: $mainBgColor;
+		font-weight: 500;
+		&::placeholder {
+			color: $mainBgColor;
+		}
+		&._form-error {
+			color: red;
+			&::placeholder {
+				color: red;
+			}
+		}
+		@media (max-width: $mobileSmall) {
+			text-align: center;
+		}
+	}
+	&._form-error {
+		border: rem(1) solid red;
 	}
 	&__button {
-		position: absolute;
-		@media (max-width: $mobileSmall) {
-			width: 96%;
-			bottom: 3%;
-			left: 50%;
-			transform: translateX(-50%);
-		}
-		@media (min-width: $mobileSmall) {
-			top: 50%;
-			transform: translateY(-50%);
-			right: 2%;
-		}
+		// position: absolute;
+		// @media (max-width: $mobileSmall) {
+		// 	width: 96%;
+		// 	bottom: 3%;
+		// 	left: 50%;
+		// 	transform: translateX(-50%);
+		// }
+		// @media (min-width: $mobileSmall) {
+		// 	top: 50%;
+		// 	transform: translateY(-50%);
+		// 	right: 2%;
+		// }
 	}
 	&__error {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		color: red;
+		font-size: rem(14);
 	}
 }
 //</FORM>

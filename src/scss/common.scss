@@ -25,6 +25,24 @@
 		}
 	}
 }
+.logo {
+	line-height: math.div(22, 18);
+	// .logo__icon
+	&__icon {
+	}
+	// .logo__name
+	&__name {
+	}
+}
+// .-green-hover
+[class*="-green-hover"] {
+	transition: color 0.3s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			color: $greenColor;
+		}
+	}
+}
 //<GLOBAL Animations>=================================
 
 //</GLOBAL Animations>=================================

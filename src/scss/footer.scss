@@ -64,14 +64,6 @@
 		// @include adaptiveValue("padding-right", 70, 10);
 	}
 }
-.logo {
-	// .logo__icon
-	&__icon {
-	}
-	// .logo__name
-	&__name {
-	}
-}
 .item-form {
 	// .item-form__text
 	&__text {
@@ -85,8 +77,11 @@
 	}
 	// .item-form__form
 	&__form {
+		@media (max-width: $pc) {
+			flex-direction: column;
+		}
 		@media (max-width: $tablet) {
-			display: block;
+			// display: block;
 			width: 100%;
 		}
 	}
@@ -144,6 +139,7 @@
 		position: relative;
 		&::before {
 			font-size: 32px;
+			// font-weight: 400;
 			z-index: 2;
 			color: $greenColor;
 			position: absolute;
@@ -152,6 +148,7 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+			transition: color 0.4s ease 0s;
 		}
 		&::after {
 			content: "";
@@ -159,6 +156,7 @@
 			height: rem(48);
 			background-color: #fff;
 			border-radius: 50%;
+			transition: background-color 0.4s ease 0s;
 		}
 	}
 	// .item-social__contact
@@ -166,6 +164,43 @@
 	}
 	// .item-social__tel
 	&__tel {
+	}
+}
+.item-social__icon._icon-facebook {
+	@media (any-hover: hover) {
+		&:hover {
+			&::after {
+				background-color: #335bf5;
+				// font-weight: 700;
+			}
+			&::before {
+				color: #fff;
+			}
+		}
+	}
+}
+.item-social__icon._icon-instagram {
+	@media (any-hover: hover) {
+		&:hover {
+			&::after {
+				background-color: #e51f5a;
+			}
+			&::before {
+				color: #fff;
+			}
+		}
+	}
+}
+.item-social__icon._icon-tvitter {
+	@media (any-hover: hover) {
+		&:hover {
+			&::after {
+				background-color: #21a6df;
+			}
+			&::before {
+				color: #fff;
+			}
+		}
 	}
 }
 .footer-bottom {
