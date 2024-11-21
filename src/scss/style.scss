@@ -101,12 +101,16 @@ body {
 Например header__container, main__container и т.д.
 Снипет (HTML): cnt
 */
-
+[class*="__container"] {
+	max-width: rem(1450);
+	margin: 0 auto;
+	padding: rem(0) rem(15);
+}
 @if ($responsiveType==1) {
 	// Отзывчивая
-	[class*="__container"] {
+	[class*="__container-lage"] {
 		@if ($maxWidthContainer>0) {
-			max-width: rem($containerWidth);
+			max-width: rem($maxWidthContainer);
 			box-sizing: content-box;
 			margin: 0 auto;
 		}
@@ -145,10 +149,7 @@ body {
 		}
 	}
 }
-[class*="__container-lage"] {
-	max-width: rem(1620);
-	margin: 0 auto;
-}
+
 // </CONTAINER>=================================
 
 // <IMPORT>=================================
