@@ -884,8 +884,10 @@ body {
 		&.elipse {
 			&_1,
 			&_2 {
-				left: 50%;
-				top: 0%;
+				::before {
+					left: 50%;
+					top: 0%;
+				}
 			}
 			// .elipse_1
 			&_1 {
