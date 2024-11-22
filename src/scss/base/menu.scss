@@ -121,28 +121,9 @@
 		font-family: Lato;
 		color: #fff;
 		@include adaptiveValue("font-size", 36, 26);
-		// font-size: 36px;
 		font-weight: 500;
-		position: relative;
 		z-index: 3;
 		transition: color 0.3s ease 0s;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			@include adaptiveValue("width", 585, 340);
-			@include adaptiveValue("height", 585, 340);
-			border-radius: 50%;
-			border: rem(1) solid #fff;
-			top: 0;
-			left: 0;
-		}
-		&::before {
-			transform: translate(calc(-50% - rem(28)), calc(-50% + rem(43)));
-		}
-		&::after {
-			transform: translate(calc(-50% + rem(27)), calc(-50% - rem(39)));
-		}
 	}
 }
 //</MENU>=======================================

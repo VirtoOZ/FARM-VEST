@@ -44,6 +44,48 @@
 		}
 	}
 }
+.elipse {
+	&_1,
+	&_2 {
+		position: absolute;
+		@include adaptiveValue("width", 585, 340);
+		@include adaptiveValue("height", 585, 340);
+		pointer-events: none;
+		&::before {
+			content: "";
+			animation: elipse 6s infinite linear;
+			display: block;
+			border: rem(1) solid #fff;
+			border-radius: 50%;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	// .decor__element_elipse-1
+	&_1 {
+		&::before {
+		}
+	}
+	// .decor__element_elipse-2
+	&_2 {
+		&::before {
+		}
+	}
+	@keyframes elipse {
+		0% {
+		}
+		45% {
+			border-color: #fff;
+		}
+		50% {
+			border-color: $greenColor;
+		}
+		100% {
+			border-color: #fff;
+		}
+	}
+}
+
 //<GLOBAL Animations>=================================
 
 //</GLOBAL Animations>=================================
