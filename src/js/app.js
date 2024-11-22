@@ -100,7 +100,7 @@ flsFunctions.spollers();
 Модуль анимации (параллакс) объектов во время движения мыши
 Документация: https://start-template.ru/modul-animaczii-parallaks-obektov-vo-vremya-dvizheniya-myshi-chertogi-frilansera-v3-0-0/
 */
-// import './libs/parallax-mouse.js'
+import './libs/parallax-mouse.js'
 
 // ========================================================================================================================================================================================================================================================
 // Работа c формами ========================================================================================================================================================================================================================================================
@@ -201,10 +201,10 @@ flsForms.formSubmit();
 // Модуль параллакса
 // Документация: https://start-template.ru/parallaks-effekt-pri-skrolle-straniczy-chertogi-frilansera-v3-0-0/
 // Сниппет(HTML):
-// import './libs/parallax.js'
+import './libs/parallax.js'
 
 // Функции работы скроллом
-// import * as flsScroll from "./files/scroll/scroll.js";
+import * as flsScroll from "./files/scroll/scroll.js";
 
 // Плавная навигация по странице
 // Документация: https://start-template.ru/modul-prokrutka-k-nuzhnomu-bloku-plavnaya-navigacziya-po-stranicze-chertogi-frilansera-v3-0-0/
@@ -212,7 +212,7 @@ flsForms.formSubmit();
 
 // Функциональность добавления классов в хеддер при прокрутке
 // Документация: https://start-template.ru/modul-dobavleniya-klassov-v-shapku-pri-prokrutke-straniczy-chertogi-frilansera-v3-0-0/
-// flsScroll.headerScroll();
+flsScroll.headerScroll();
 
 // Модуль анимация цифрового счетчика
 // Документация: https://start-template.ru/modul-animaczii-czifrovogo-schetchika/
