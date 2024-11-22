@@ -8,7 +8,6 @@
 		@include adaptiveValue("font-size", 70, 30);
 		font-weight: 700;
 		line-height: math.div(78, 70);
-		// line-height: 180%;
 		span {
 			color: #23b123;
 		}
@@ -18,7 +17,6 @@
 	&__text {
 		max-width: rem(580);
 		line-height: math.div(32.4, 18);
-		// line-height: 177%;
 		p {
 			&:not(:last-child) {
 				@include adaptiveValue("margin-bottom", 48, 20);
