@@ -13,7 +13,7 @@
 // </ШРИФТ></IMPORT>=================================
 
 // <VARIABLES>=================================
-$fontFamily: "LeagueSpartan";
+$fontFamily: "Spartan";
 $fontSize: rem(18); // где 14(px) - размер шрифта по умолчанию из макета
 // Основные цвета
 $mainTextColor: #ffffff;
@@ -168,8 +168,9 @@ body {
 .page {
 	// .page__main
 	&__main {
-		@include adaptiveValue("margin-top", 182, 50);
-		@include adaptiveValue("padding-top", 70, 25);
+	}
+	// .page__brands
+	&__brands {
 		@include adaptiveValue("margin-bottom", 200, 60);
 	}
 	// .page__how
@@ -204,12 +205,16 @@ body {
 	// .main__container
 	&__container {
 	}
+	// .main__content
+	&__content {
+		@include adaptiveValue("padding-top", 251, 75);
+		@include adaptiveValue("padding-bottom", 208, 60);
+	}
 	// .main__top
 	&__top {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		@include adaptiveValue("margin-bottom", 210, 70);
 	}
 	// .main__form
 	&__form {
@@ -237,7 +242,68 @@ body {
 	&__decor {
 	}
 }
+.decor {
+	// .decor__element
+	&__element {
+		position: absolute;
+		// .decor__element_1
+		&_1 {
+			top: percent(682, 982);
+			left: percent(8, 1650);
+			@include adaptiveValue("font-size", 26, 18);
+		}
+		// .decor__element_2
+		&_2 {
+			top: percent(379, 982);
+			left: percent(237, 1650);
+			@include adaptiveValue("font-size", 40, 20);
+		}
+		// .decor__element_3
+		&_3 {
+			top: percent(757, 982);
+			left: percent(403, 1650);
+			@include adaptiveValue("font-size", 17, 14);
+		}
+		// .decor__element_4
+		&_4 {
+			top: percent(134, 982);
+			left: percent(1149, 1650);
+			@include adaptiveValue("font-size", 48, 24);
+		}
+		// .decor__element_5
+		&_5 {
+			top: percent(841, 982);
+			left: percent(1201, 1650);
+			@include adaptiveValue("font-size", 22, 16);
+		}
+		// .decor__element_6
+		&_6 {
+			top: percent(419, 982);
+			left: percent(1325, 1650);
+			@include adaptiveValue("font-size", 16, 14);
+		}
+		// .decor__element_7
+		&_7 {
+			top: percent(776, 982);
+			left: percent(1321, 1650);
+			@include adaptiveValue("font-size", 40, 20);
+		}
+		// .decor__element_8
+		&_8 {
+			top: percent(367, 982);
+			left: percent(1588, 1650);
+			@include adaptiveValue("font-size", 32, 18);
+		}
+	}
+}
+// ===<animation>===
+//</MAIN>=================================
+
+//</BRANDS>=================================
 .brands {
+	// .brands__container
+	&__container {
+	}
 	// .brands__list
 	&__list {
 		display: grid;
@@ -268,49 +334,8 @@ body {
 		line-height: 177%;
 	}
 }
-.decor {
-	// .decor__element
-	&__element {
-		position: absolute;
-		// ._icon-dollar
-		&_icon-dollar {
-			&::before {
-			}
-		}
-		// ._icon-star
-		&_icon-star {
-			&::before {
-			}
-		}
-		// ._icon-ellipse-clear
-		&_icon-ellipse-clear {
-			&::before {
-			}
-		}
-		// ._icon-bank
-		&_icon-bank {
-			&::before {
-			}
-		}
-		// ._icon-bucks
-		&_icon-bucks {
-			&::before {
-			}
-		}
-		// ._icon-ellipse
-		&_icon-ellipse {
-			&::before {
-			}
-		}
-		// ._icon-star-clear
-		&_icon-star-clear {
-			&::before {
-			}
-		}
-	}
-}
 // ===<animation>===
-//</MAIN>=================================
+//</BRANDS>=================================
 
 //<HOW>=================================
 .how {

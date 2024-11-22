@@ -13,6 +13,13 @@
 	font-style: normal;
 }
 @font-face {
+	font-family: Spartan;
+	font-display: swap;
+	src: url("../fonts/Spartan-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
 	font-family: Lato;
 	font-display: swap;
 	src: url("../fonts/Lato-Regular.woff2") format("woff2");
@@ -20,37 +27,30 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: LeagueSpartan;
+	font-family: Spartan;
 	font-display: swap;
-	src: url("../fonts/LeagueSpartan-Bold.woff2") format("woff2");
-	font-weight: 700;
+	src: url("../fonts/Spartan-Light.woff2") format("woff2");
+	font-weight: 300;
 	font-style: normal;
 }
 @font-face {
-	font-family: LeagueSpartan;
+	font-family: Spartan;
 	font-display: swap;
-	src: url("../fonts/LeagueSpartan-Medium.woff2") format("woff2");
+	src: url("../fonts/Spartan-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
-	font-family: LeagueSpartan;
+	font-family: Spartan;
 	font-display: swap;
-	src: url("../fonts/LeagueSpartan-Regular.woff2") format("woff2");
+	src: url("../fonts/Spartan-Regular.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
-	font-family: LeagueSpartan;
+	font-family: Spartan;
 	font-display: swap;
-	src: url("../fonts/LeagueSpartan-SemiBold.woff2") format("woff2");
+	src: url("../fonts/Spartan-SemiBold.woff2") format("woff2");
 	font-weight: 600;
-	font-style: normal;
-}
-@font-face {
-	font-family: LeagueSpartan;
-	font-display: swap;
-	src: url("../fonts/LeagueSpartan-Light.woff2") format("woff2");
-	font-weight: 300;
 	font-style: normal;
 }

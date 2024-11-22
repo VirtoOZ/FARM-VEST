@@ -7,17 +7,18 @@
 		max-width: rem(580);
 		@include adaptiveValue("font-size", 70, 30);
 		font-weight: 700;
-		line-height: math.div(84, 70);
+		line-height: math.div(78, 70);
 		// line-height: 180%;
 		span {
 			color: #23b123;
 		}
-		@include adaptiveValue("margin-bottom", 70, 30);
+		@include adaptiveValue("margin-bottom", 69, 30);
 	}
 	// .title__text
 	&__text {
 		max-width: rem(580);
-		line-height: 177%;
+		line-height: math.div(32.4, 18);
+		// line-height: 177%;
 		p {
 			&:not(:last-child) {
 				@include adaptiveValue("margin-bottom", 48, 20);
