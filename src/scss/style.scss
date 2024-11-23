@@ -104,7 +104,7 @@ body {
 [class*="__container"] {
 	max-width: rem(1450);
 	margin: 0 auto;
-	padding: rem(0) rem(15);
+	// padding: rem(0) rem(15);
 }
 @if ($responsiveType==1) {
 	// Отзывчивая
@@ -242,6 +242,11 @@ body {
 	}
 	// .main__decor
 	&__decor {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 }
 .decor {

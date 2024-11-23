@@ -46,6 +46,7 @@
 	&_1,
 	&_2 {
 		position: absolute;
+		// z-index: 1;
 		@include adaptiveValue("width", 585, 340);
 		@include adaptiveValue("height", 585, 340);
 		pointer-events: none;

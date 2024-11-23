@@ -19,7 +19,6 @@
 			height: 100%;
 			left: -100%;
 			top: 0;
-			overflow: auto;
 			@include adaptiveValue("padding-top", 150, 60, 1, 768, 320);
 			padding: rem(30) rem(15);
 			transition: left 0.3s;
@@ -36,6 +35,7 @@
 				background-color: #1a851a;
 			}
 			.menu-open & {
+				overflow: auto;
 				left: 0;
 				&::before {
 					left: 0;

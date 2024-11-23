@@ -5,6 +5,8 @@
 	width: 100%;
 	top: 0;
 	left: 0;
+	transition: top 1s ease 0s;
+	// .header__wrapper
 	&__wrapper {
 	}
 	// .header__container
@@ -15,6 +17,18 @@
 		@include adaptiveValue("min-height", 182, 50);
 		display: flex;
 		align-items: center;
+	}
+	&._header-scroll {
+		top: -100%;
+	}
+	&._header-show._header-scroll {
+		// background-color: rgba(38, 50, 56, 1);
+		background-color: rgba(38, 50, 56, 0.8);
+		// opacity: 0.5;
+		top: 0;
+		.header__menu {
+			@include adaptiveValue("min-height", 90, 50);
+		}
 	}
 }
 //</HEADER>=================================
