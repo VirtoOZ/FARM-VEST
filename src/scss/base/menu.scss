@@ -28,11 +28,16 @@
 				position: fixed;
 				width: 100%;
 				@include adaptiveValue("height", 182, 50);
+				// @include adaptiveValue("min-height", 182, 50, 1, 768, 320);
 				left: -100%;
 				top: 0;
 				transition: left 0.3s;
 				z-index: 2;
-				background-color: #1a851a;
+				background-color: rgba(25, 33, 36, 0.8);
+				// background-color: #1a851a;
+				._header-show._header-scroll & {
+					@include adaptiveValue("height", 90, 50);
+				}
 			}
 			.menu-open & {
 				overflow: auto;
@@ -96,6 +101,8 @@
 			align-items: center;
 			flex: 1 1 auto;
 			justify-content: flex-end;
+			position: relative;
+			z-index: 3;
 		}
 	}
 	// .menu__button
@@ -131,6 +138,15 @@
 //<BURGER>=======================================
 .icon-menu {
 	display: none;
+	@media (any-hover: hover) {
+		&:hover {
+			span,
+			&::before,
+			&::after {
+				background-color: $greenColor;
+			}
+		}
+	}
 	@media (max-width: $mobileBig) {
 		display: block;
 		position: relative;

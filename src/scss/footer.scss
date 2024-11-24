@@ -312,11 +312,19 @@
 		@media (max-width: $tablet) {
 			justify-self: start;
 		}
+		@media (any-hover: hover) {
+			&:hover {
+				.footer-bottom__link {
+					color: $greenColor;
+				}
+			}
+		}
 	}
 	// .footer-bottom__link
 	&__link {
 		// @include adaptiveValue("font-size", 14, 16);
 		font-size: rem(14);
+		transition: color 0.3s ease 0s;
 	}
 }
 //</FOOTER>=================================

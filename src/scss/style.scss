@@ -644,6 +644,7 @@ body {
 	}
 	// .achievements__columns
 	&__columns {
+		counter-reset: item;
 		@include adaptiveValue("margin-bottom", 48, 20);
 	}
 	// .achievements__column
@@ -651,6 +652,14 @@ body {
 		max-width: rem(500);
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 48, 15);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				.achievements-item__title,
+				.achievements-item__icon::before {
+					color: $greenColor;
+				}
+			}
 		}
 	}
 	// .achievements__item
@@ -680,7 +689,8 @@ body {
 		display: flex;
 		position: relative;
 		&::before {
-			content: "1";
+			content: counter(item);
+			counter-increment: item;
 			position: absolute;
 			top: 65%;
 			left: 50%;
@@ -689,6 +699,7 @@ body {
 			color: #fff;
 			line-height: math.div(40, 36);
 			font-weight: 700;
+			transition: color 0.3s ease 0s;
 		}
 		&::after {
 			content: "";
@@ -706,6 +717,7 @@ body {
 		color: #fff;
 		@include adaptiveValue("font-size", 20, 18);
 		font-weight: 500;
+		transition: color 0.3s ease 0s;
 	}
 }
 .achievements-media {
