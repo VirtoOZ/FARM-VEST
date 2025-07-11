@@ -1,4 +1,3 @@
-// Подключение функционала "Чертоги Фрилансера"
 import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../files/functions.js";
 import { flsModules } from "../files/modules.js";
 import { formValidate } from "../files/forms/forms.js";
@@ -6,10 +5,7 @@ import { formValidate } from "../files/forms/forms.js";
 // Подключение файла стилей
 // Базовые стили состоят в src/scss/forms.scss
 // Файл базовых стилей src/scss/forms/select.scss
-/*
-Документация:
-Сниппет (HTML): sel
-*/
+
 /*
 //Настройка
 Для селектора (select):
@@ -351,7 +347,7 @@ class SelectConstructor {
 		let selectedOptions = [];
 		if (originalSelect.multiple) {
 			// Если мультивыбор
-            // Забираем плейсхолдер, получаем остальные избранные элементы
+			// Забираем плейсхолдер, получаем остальные избранные элементы
 			selectedOptions = Array.from(originalSelect.options).filter(option => option.value).filter(option => option.selected);
 		} else {
 			// Если единичный выбор
@@ -453,7 +449,7 @@ class SelectConstructor {
 		const selectOptions = selectItem.querySelector(`${this.getSelectClass(this.selectClasses.classSelectOptions)}`);
 		if (!selectOptions.classList.contains('_slide')) {
 			if (originalSelect.multiple) { // Если мультивыбор
-                // Выделяем классом элемент
+				// Выделяем классом элемент
 				optionItem.classList.toggle(this.selectClasses.classSelectOptionSelected);
 				// Очищаем выбранные элементы
 				const originalSelectSelectedItems = this.getSelectedOptionsData(originalSelect).elements;

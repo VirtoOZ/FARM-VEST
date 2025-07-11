@@ -1,4 +1,3 @@
-// Подключение функционала "Чертоги фрилансера"
 import { isMobile, FLS } from "../files/functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "../files/modules.js";
@@ -102,10 +101,5 @@ class BeforeAfter {
 	}
 }
 
-
-
-
-
 // Запускаем и добавляем в объект модулей
 flsModules.ba = new BeforeAfter({});
-

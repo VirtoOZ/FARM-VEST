@@ -1,4 +1,3 @@
-// Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
